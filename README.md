@@ -23,7 +23,7 @@ This project demonstrates how to build a Highly Available Kubernetes cluster usi
 
 ## Cluster Flow
 
-Client → VIP (192.168.1.110) → HAProxy → Control Planes → Workers
+Client → VIP (192.168.1.75) → HAProxy → Control Planes → Workers
 
 Keepalived ensures VIP failover between LB1 and LB2.
 
