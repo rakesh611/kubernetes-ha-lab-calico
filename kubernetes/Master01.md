@@ -67,3 +67,17 @@ sudo swapon --show
 getent hosts api.k8s.corp.example
 nc -zv -w 3 api.k8s.corp.example 6443
 ```
+Initialize CP-01
+```
+sudo kubeadm init \
+  --config /root/kubeadm/kubeadm-config.yaml \
+  --upload-certs \
+  --v=5
+```
+
+Configure kubectl
+```
+mkdir -p "$HOME/.kube"
+sudo cp -i /etc/kubernetes/admin.conf "$HOME/.kube/config"
+sudo chown "$(id -u):$(id -g)" "$HOME/.kube/config"
+```
