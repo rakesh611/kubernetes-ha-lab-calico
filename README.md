@@ -7,15 +7,17 @@ This project demonstrates how to build a Highly Available Kubernetes cluster usi
 - Keepalived
 - Calico CNI
 - containerd (CRI)
+- DNS(Named)
 
 ## Architecture Overview
 
 - 2 Load Balancers (LB1, LB2)
+- 2 DNS Server (DNS1 DNS2)
 - 3 Control Plane Nodes (m1, m2, m3)
 - 5 Worker Nodes (w1–w5)
-- Virtual IP (VIP): 192.168.1.110
-- Kubernetes Version: v1.35.x
-- Pod CIDR: 192.168.0.0/16
+- Virtual IP (VIP): 192.168.1.75
+- Kubernetes Version: v1.36.x
+- Pod CIDR: 
 
 ## Cluster Flow
 
