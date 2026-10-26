@@ -57,3 +57,13 @@ Then check which images kubeadm expects:
 sudo kubeadm config images list \
   --config /root/kubeadm/kubeadm-config.yaml
 ```
+
+Validate CP-01
+```
+sudo systemctl is-active containerd
+sudo containerd config dump | grep -i SystemdCgroup | head
+sudo kubeadm config validate --config /root/kubeadm/kubeadm-config.yaml
+sudo swapon --show
+getent hosts api.k8s.corp.example
+nc -zv -w 3 api.k8s.corp.example 6443
+```
