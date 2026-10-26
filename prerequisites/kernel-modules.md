@@ -1,3 +1,17 @@
+Load kernel modules
+Create /etc/modules-load.d/k8s.conf:
+```
+overlay
+br_netfilter
+```
+Load them now:
+```
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+lsmod | grep -E 'overlay|br_netfilter'
+```
+
 Configure sysctl:
 Create /etc/sysctl.d/99-kubernetes-cri.conf:
 ```
