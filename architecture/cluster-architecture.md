@@ -3,21 +3,21 @@
 ## Node Layout
 
 Load Balancers:
-- LB1: 192.168.1.100
-- LB2: 192.168.1.101
-- VIP: 192.168.1.110
+- LB1: 192.168.1.73
+- LB2: 192.168.1.74
+- VIP: 192.168.1.75
 
 Control Planes:
-- m1: 192.168.1.50
-- m2: 192.168.1.51
-- m3: 192.168.1.52
+- m1: 192.168.1.76
+- m2: 192.168.1.77
+- m3: 192.168.1.78
 
 Workers:
 - w1–w5
 
 ## Traffic Flow
 
-1. kubectl or API request hits VIP (192.168.1.110)
+1. kubectl or API request hits VIP (192.168.1.75)
 2. VIP is owned by active Keepalived node
 3. HAProxy forwards traffic to healthy masters
 4. etcd syncs between control planes
