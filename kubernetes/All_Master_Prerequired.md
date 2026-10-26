@@ -135,3 +135,13 @@ or
 sudo crictl --runtime-endpoint \
   unix:///run/containerd/containerd.sock images
 ```
+
+On each master, run:
+```
+sudo systemctl is-active containerd
+sudo grep -n 'SystemdCgroup' /etc/containerd/config.toml
+sudo kubeadm version
+sudo kubelet --version
+sudo swapon --show
+sudo lsmod | grep -E 'overlay|br_netfilter'
+```
