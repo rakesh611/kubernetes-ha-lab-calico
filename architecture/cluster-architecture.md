@@ -1,6 +1,5 @@
 # Cluster Architecture
 
-<img width="1536" height="1024" alt="Corporate Kubernetes HA Network Architecture" src="https://github.com/user-attachments/assets/c3ce2316-10fc-43dc-b16f-b22faa394d9d" />
 
 
 ## Node Layout
