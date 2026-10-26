@@ -1,11 +1,18 @@
 # Cluster Architecture
 
+<img width="1536" height="1024" alt="Corporate Kubernetes HA Network Architecture" src="https://github.com/user-attachments/assets/c3ce2316-10fc-43dc-b16f-b22faa394d9d" />
+
+
 ## Node Layout
 
 Load Balancers:
 - LB1: 192.168.1.73
 - LB2: 192.168.1.74
 - VIP: 192.168.1.75
+
+DNS Server:
+- DNS1: 192.168.1.71
+- DNS2: 192.168.1.72
 
 Control Planes:
 - m1: 192.168.1.76
