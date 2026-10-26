@@ -117,3 +117,21 @@ echo "=== RUNTIME ==="
 sudo systemctl is-active containerd
 sudo grep -n 'SystemdCgroup' /etc/containerd/config.toml
 ```
+
+
+Pull the control-plane images
+Once the checks above are satisfactory, pull the required images on all three masters:
+```
+sudo kubeadm config images pull \
+  --config /root/kubeadm/kubeadm-config.yaml \
+  --cri-socket unix:///run/containerd/containerd.sock
+```
+This downloads the images listed by kubeadm, including the API server, controller manager, scheduler, etcd and CoreDNS.
+
+verify:
+```
+sudo ctr -n k8s.io images ls
+or
+sudo crictl --runtime-endpoint \
+  unix:///run/containerd/containerd.sock images
+```
